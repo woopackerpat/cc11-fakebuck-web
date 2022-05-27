@@ -1,21 +1,22 @@
-import React, { useContext } from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
-import LoginPage from "../pages/LoginPage";
-import HomePage from "../pages/HomePage";
-import FriendPage from "../pages/FriendPage";
-import ProfilePage from "../pages/ProfilePage";
-import AuthLayout from "../components/layout/AuthLayout";
-import Sidebar from "../components/layout/sidebar/Sidebar";
-import { AuthContext } from "../contexts/AuthContext";
+import { useContext } from 'react';
+import { Navigate, Route, Routes } from 'react-router-dom';
+import LoginPage from '../pages/LoginPage';
+import HomePage from '../pages/HomePage';
+import FriendPage from '../pages/FriendPage';
+import ProfilePage from '../pages/ProfilePage';
+import AuthLayout from '../components/layout/AuthLayout';
+import Sidebar from '../components/layout/sidebar/Sidebar';
+import { AuthContext } from '../contexts/AuthContext';
 
 function Router() {
   const { user } = useContext(AuthContext);
   return (
     <Routes>
+      
       {user ? (
         <>
           <Route path="/" element={<AuthLayout />}>
-            <Route path="/" element={<HomePage />} />
+            <Route path="" element={<HomePage />} />
             <Route path="friend" element={<Sidebar />}>
               <Route path="" element={<FriendPage />} />
               <Route path="request" element={<FriendPage />} />
