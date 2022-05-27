@@ -12,7 +12,6 @@ function Router() {
   const { user } = useContext(AuthContext);
   return (
     <Routes>
-      
       {user ? (
         <>
           <Route path="/" element={<AuthLayout />}>

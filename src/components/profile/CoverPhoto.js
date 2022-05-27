@@ -1,6 +1,7 @@
-import React from "react";
+import defaultCoverPhoto from '../../assets/images/cover.png'
 
-function CoverPhoto() {
+
+function CoverPhoto({src}) {
   return (
     <div
       className="overflow-hidden position-relative mx-auto rounded-b-lg max-w-274 max-h-101"
@@ -9,7 +10,7 @@ function CoverPhoto() {
       }}
     >
       <img
-        src="https://images.pexels.com/photos/1292006/pexels-photo-1292006.jpeg"
+        src= {src || defaultCoverPhoto}
         alt="cover"
         className="position-absolute img-fluid top-50 start-50 translate-middle"
       />

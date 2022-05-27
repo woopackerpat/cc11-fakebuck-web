@@ -1,8 +1,9 @@
 import React from 'react'
+import FriendContainer from '../components/friend/FriendContainer'
 
 function FriendPage() {
   return (
-    <div>FriendPage</div>
+    <FriendContainer />
   )
 }
 
