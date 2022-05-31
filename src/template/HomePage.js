@@ -1,21 +1,8 @@
 
-import CratePost from "../components/homepage/CreatePost";
-import ModalCreatePost from "../components/common/ModalCreatePost";
-import Post from "../components/homepage/Post";
-
+import PostContainer from "../components/post/PostContainer";
 
 function HomePage() {
-  return (
-    <div className="min-vh-100 tw-pt-14">
-      <div className="max-w-147.5 mx-auto py-4">
-        <CratePost />
-
-        <ModalCreatePost />
-
-        <Post />
-      </div>
-    </div>
-  );
+  return <PostContainer />;
 }
 
 export default HomePage;
