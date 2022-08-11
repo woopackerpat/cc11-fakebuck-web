@@ -4,6 +4,7 @@ import PostResponse from "./PostResponse";
 import { useState } from "react";
 
 function PostFooter({ post }) {
+  const { Likes: likes } = post;
   const [show, setShow] = useState(false);
 
   const toggleShow = () => {
@@ -18,8 +19,8 @@ function PostFooter({ post }) {
     <>
       <PostFeedback toggleShow={toggleShow} post={post} />
       <hr className="hr-sm my-0" />
-      <PostResponse showComment={showComment} />
-      {show && <CommentContainer post = {post}/>}
+      <PostResponse showComment={showComment} likes={likes} postId={post.id} />
+      {show && <CommentContainer post={post} />}
     </>
   );
 }

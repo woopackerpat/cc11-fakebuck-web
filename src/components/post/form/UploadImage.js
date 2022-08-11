@@ -17,9 +17,8 @@ function UploadImage({ value, onChange, onDelete }) {
               style={{ top: 6, right: 6 }}
               onClick={(e) => {
                 e.stopPropagation();
-                inputEl.current.value = ''
+                inputEl.current.value = "";
                 onDelete();
-                
               }}
             />
             <img

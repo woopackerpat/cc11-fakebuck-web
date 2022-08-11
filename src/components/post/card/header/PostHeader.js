@@ -1,13 +1,20 @@
-import React from "react";
+import { useState } from "react";
 import UserIcon from "../../../common/UserIcon";
 import { Link } from "react-router-dom";
 import { timeSince } from "../../../../services/dateFormat";
+import PostForm from "../../form/PostForm";
+import Modal from "../../../ui/Modal";
 
 function PostHeader({ post }) {
   const {
     User: { id, firstName, lastName, profilePic },
     updatedAt,
   } = post;
+  //self
+  const [open, setOpen] = useState(false);
+  const closeModal = () => {
+    setOpen(false);
+  };
   return (
     <div className="d-flex align-items-center space-x-2">
       <Link to={"/profile/" + id}>
@@ -36,6 +43,10 @@ function PostHeader({ post }) {
           Delete
         </button>
       </div>
+      {/* self */}
+      <Modal open={open} onClose={closeModal} title = "Edit Post">
+        <PostForm />
+      </Modal>
     </div>
   );
 }

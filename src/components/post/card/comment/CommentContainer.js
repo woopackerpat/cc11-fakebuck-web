@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
+import { usePost } from "../../../../contexts/PostContext";
 import CommentList from "./CommentList";
 import NewCommentBox from "./NewCommentBox";
 
-function CommentContainer({ post: { Comments: comments, id } }) {
-  // const [commentStatus, setcommentStatus] = useState(false);
-  // useEffect(() => {
-
-  // }, [commentStatus]);
+function CommentContainer({ post: { id } }) {
+  const { commentMapping } = usePost();
+  const comments = commentMapping[id];
   return (
     <div className="pb-2">
       <hr className="my-0 hr-sm" />
